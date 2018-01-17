@@ -2,9 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 
-import { AppComponent } from './app.component';
-import { FotoModule } from './foto/foto.module';
-
+import { AppComponent } from './app.component'
+import { HttpModule } from '@angular/http'
+import { FotoModule } from './foto/foto.module'
+import { PainelModule } from './painel/painel.module';
 
 
 @NgModule({
@@ -13,7 +14,9 @@ import { FotoModule } from './foto/foto.module';
   ],
   imports: [
     BrowserModule,
-    FotoModule
+    HttpModule,
+    FotoModule,
+    PainelModule
   ],
   providers: [],
   bootstrap: [AppComponent]
