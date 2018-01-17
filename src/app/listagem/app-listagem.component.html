@@ -1,0 +1,7 @@
+<header class="jumbotron" >
+    <h1 class="text-center">{{title}} </h1>
+  </header>
+
+  <painel class="col-md-2" *ngFor="let foto of listFotos" titulo = "{{foto.titulo}}" >
+      <foto  url="{{foto.url}}" titulo="{{foto.titulo}}" ></foto>
+  </painel>
