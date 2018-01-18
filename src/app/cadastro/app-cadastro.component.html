@@ -1,2 +1,34 @@
+<header class="jumbotron" >
+        <h1 class="text-center">Cadastro Caelum Pic</h1>
+        <!--<h2 class="text-center">{{foto.titulo}}</h2>
+            <input (input)="foto.url = $event.target.value" type="text" class="form-control">-->
+</header>
+<section class="container">
+    <div class="row">
+        <form class="col-sm-6" (submit)="salvar($event)"  >
+            <div class="form-group">
+                <label for="">Tiulo</label>
+                <input type="text" [(ngModel)]="foto.titulo" name = "titulo"
+                 class="form-control">
+            </div>
+            <div class="form-group">
+                    <label for="">Url</label>
+                    <input [(ngModel)]="foto.url" name = "url"  type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Descricao</label>
+                <textarea [(ngModel)]="foto.descricao" name = "descricao" type="text" class="form-control"></textarea>
+            </div>
+            <a [routerLink]="['']" class="btn btn-primary">voltar</a>
+            <button class="btn btn-btn-primary">Salva</button>
+        </form>
+        <br>
+        
+    </div>
+
+     
+    
+  
+</section>
 
  

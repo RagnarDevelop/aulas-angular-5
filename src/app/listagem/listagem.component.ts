@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Http} from '@angular/http'
+import { FotoComponent } from '../foto/foto.component';
 
 @Component({
   selector: 'app-listagem',
@@ -10,7 +11,7 @@ export class ListagemComponent implements OnInit{
  
   title = 'Caelum Pic'
 
-  listFotos: Object[] = []
+  listFotos: FotoComponent[] = []
 
   constructor(ajax: Http) {
   
@@ -28,8 +29,8 @@ export class ListagemComponent implements OnInit{
 
   }
 
-  ngOnInit(): void {
-    throw new Error("Method not implemented.");
+  ngOnInit() {
+   
   }
 }
 
