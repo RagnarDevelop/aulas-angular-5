@@ -21,7 +21,6 @@ export class FotoService{
         response => {
             response.json()
          })
-     
     }
 
 
