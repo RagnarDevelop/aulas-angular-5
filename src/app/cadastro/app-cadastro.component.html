@@ -5,16 +5,28 @@
 </header>
 <section class="container">
     <div class="row">
-        <form class="col-sm-6" (submit)="salvar($event)"  >
+        <p *ngIf="message" class="alert alert-success">
+            {{message}}
+        </p>
+        <form  class="col-sm-6" (ngSubmit)="salvar()"  >
             <div class="form-group">
                 <label for="">Tiulo</label>
-                <input type="text" [(ngModel)]="foto.titulo" name = "titulo"
-                 class="form-control">
+                <input required
+                 type="text" 
+                 [(ngModel)]="foto.titulo"
+                 name = "titulo"
+                 class="form-control"
+                 autofocus>
+                 
+                 <span *ngIf="i" class="form-control">
+                    campo obrigatorio
+                </span>
             </div>
+      
             <div class="form-group">
                     <label for="">Url</label>
                     <input [(ngModel)]="foto.url" name = "url"  type="text" class="form-control">
-            </div>
+                </div>
             <div class="form-group">
                 <label for="">Descricao</label>
                 <textarea [(ngModel)]="foto.descricao" name = "descricao" type="text" class="form-control"></textarea>
@@ -24,7 +36,7 @@
         </form>
         <br>
         <figure >
-                <painel class="col-md-4" titulo = "{{foto.titulo}}" >
+                <painel *ngIf="foto.titulo" class="panel panel-primary col-md-4 " titulo = "{{foto.titulo}}" >
               <img src="{{foto.url}}" class="img-responsive center-block" >
                   {{foto.descricao}}
                </painel>
@@ -32,9 +44,66 @@
         </figure>
     </div>
 
-     
-    
-  
 </section>
 
  
+
+
+
+
+
+
+
+
+
+<!--<header class="jumbotron" >
+    <h1 class="text-center">Cadastro Caelum Pic</h1>
+     <h2 class="text-center">{{foto.titulo}}</h2>
+        <input (input)="foto.url = $event.target.value" type="text" class="form-control">
+</header>
+<section class="container">
+<div class="row">
+    <p *ngIf="message" class="alert alert-success">
+        {{message}}
+    </p>
+    <form #fornCadastro = "ngForm" class="col-sm-6" (submit)="salvar($event)"  >
+        <div class="form-group">
+            <label for="">Tiulo</label>
+            <input required
+             #inputTitulo="ngModel"
+             type="text" 
+             [(ngModel)]="foto.titulo"
+             name = "titulo"
+             class="form-control"
+             autofocus>
+             <span *ngIf="inputTitulo.dirty && inputTitulo.invalid" class="form-control">
+                campo obrigatorio
+            </span>
+        </div>
+  
+        <div class="form-group">
+                <label for="">Url</label>
+                <input [(ngModel)]="foto.url" name = "url"  type="text" class="form-control">
+            </div>
+        <div class="form-group">
+            <label for="">Descricao</label>
+            <textarea [(ngModel)]="foto.descricao" name = "descricao" type="text" class="form-control"></textarea>
+        </div>
+        <a [routerLink]="['']" class="btn btn-primary">voltar</a>
+        <button class="btn btn-btn-primary">Salva</button>
+    </form>
+    <br>
+    <figure >
+            <painel *ngIf="foto.titulo" class="panel panel-primary col-md-4 " titulo = "{{foto.titulo}}" >
+          <img src="{{foto.url}}" class="img-responsive center-block" >
+              {{foto.descricao}}
+           </painel>
+     
+    </figure>-
+</div>
+
+ 
+
+
+</section>-->
+

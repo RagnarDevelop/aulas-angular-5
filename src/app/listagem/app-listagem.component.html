@@ -6,7 +6,18 @@
       <div class="row">
           <a [routerLink]="['/cadastro']" class="btn btn-primary">Nova Foto</a>
       </div>
+
+      <div class="row">
+            <p *ngIf="message" class="alert alert-success">
+                    {{message}}
+             </p>
+      </div>
   <painel class="col-md-2" *ngFor="let foto of listFotos" titulo = "{{foto.titulo}}" >
-      <foto  url="{{foto.url}}" titulo="{{foto.titulo}}" ></foto>
+
+    <a [routerLink]="['/cadastro',foto._id]">
+       <foto  url="{{foto.url}}" titulo="{{foto.titulo}}" ></foto>
+    </a>
+      
+      <button (click)="excluir(foto)" class="btn btn-danger">Remover</button>
   </painel>
   </div>
